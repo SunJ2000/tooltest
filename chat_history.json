@@ -1,84 +1,18 @@
 {
-    "": {
-        "user_session_001": {
-            "messages": [
-                {
-                    "type": "human",
-                    "data": {
-                        "content": "你今天吃什么?",
-                        "additional_kwargs": {},
-                        "response_metadata": {}
-                    }
-                },
-                {
-                    "type": "ai",
-                    "data": {
-                        "id": "chatcmpl-9473c48d-2c79-96a6-9714-84c01abacb94",
-                        "content": "哈哈，作为AI助手我其实不吃饭哦～不过我超爱和你一起“云做饭”！😄  \n今天翻了翻我的灵感食谱库，特别想推荐一道简单又治愈的——**蒜香黄油虾仁意面**：  \n✨ 大虾鲜甜弹牙，裹着蒜末爆香的黄油酱汁，撒上欧芹碎和一点帕玛森奶酪，再挤点柠檬汁提亮～5分钟快手炒虾，15分钟搞定一盘暖呼呼的晚餐！\n\n如果你喜欢清淡点，我可以帮你改成青酱版或番茄罗勒版；要是想吃中餐，咱们也能立刻切到宫保鸡丁、冬瓜薏米老鸭汤模式～ 🍲  \n所以…你今天胃口偏向哪一派？想解馋、想下饭、想养生，还是…冰箱里刚好有半盒豆腐/一把菠菜/几颗小番茄？告诉我，咱一起设计专属菜式！😋",
-                        "additional_kwargs": {},
-                        "response_metadata": {
-                            "tokenUsage": {
-                                "promptTokens": 26,
-                                "completionTokens": 212,
-                                "totalTokens": 238
-                            },
-                            "finish_reason": "stop",
-                            "model_provider": "openai",
-                            "model_name": "qwen-plus"
-                        },
-                        "type": "ai",
-                        "tool_calls": [],
-                        "invalid_tool_calls": [],
-                        "usage_metadata": {
-                            "output_tokens": 212,
-                            "input_tokens": 26,
-                            "total_tokens": 238,
-                            "input_token_details": {
-                                "cache_read": 0
-                            },
-                            "output_token_details": {}
-                        }
-                    }
-                },
-                {
-                    "type": "human",
-                    "data": {
-                        "content": "好吃吗?",
-                        "additional_kwargs": {},
-                        "response_metadata": {}
-                    }
-                },
-                {
-                    "type": "ai",
-                    "data": {
-                        "id": "chatcmpl-b8e7857d-f726-9dae-b9ec-27f694aa9408",
-                        "content": "哈哈，虽然我没法真的尝味道（只能靠“数据味蕾”疯狂脑补😋），但可以很认真地告诉你——  \n这道**蒜香黄油虾仁意面**在真实厨房里是「高口碑爆款」！✨  \n\n✅ 好吃在哪？  \n🔹 **鲜+香+润的黄金三角**：虾仁自带海洋清甜，黄油提供丰润奶香，蒜末用小火煸到金边微焦，香气直接钻进鼻腔～  \n🔹 **口感层层叠叠**：弹牙的虾 + 柔韧的意面 + 微脆的蒜粒 + 柠檬汁那一口清爽收尾，吃一口就停不下来！  \n🔹 **神奇的“锅气魔法”**：最后关火前淋半勺冷黄油快速拌匀，酱汁瞬间浓稠光亮，牢牢裹住每一根面条——这是米其林小馆都在偷师的小心机！  \n\n💡小贴士：如果怕腻，加一点嫩菠菜或烤樱桃番茄，酸甜多汁一中和，立马清爽升级～  \n\n不过…真正的好吃，永远藏在你的口味里呀 🌟  \n你平时吃虾喜欢Q弹一点，还是更爱软嫩？偏好蒜香浓郁，还是希望带点辣/酸/奶香？告诉我，我立刻帮你调个「专属美味参数」，连火候、下料顺序、甚至摆盘小花招都给你配齐！🌿  \n\n（悄悄说：上周有位朋友照着这个方子做了，拍照发朋友圈被追着要链接…还顺手解锁了“男友技能+1”😂）  \n要不要…现在就开火？🔥",
-                        "additional_kwargs": {},
-                        "response_metadata": {
-                            "tokenUsage": {
-                                "promptTokens": 251,
-                                "completionTokens": 370,
-                                "totalTokens": 621
-                            },
-                            "finish_reason": "stop",
-                            "model_provider": "openai",
-                            "model_name": "qwen-plus"
-                        },
-                        "type": "ai",
-                        "tool_calls": [],
-                        "invalid_tool_calls": [],
-                        "usage_metadata": {
-                            "output_tokens": 370,
-                            "input_tokens": 251,
-                            "total_tokens": 621,
-                            "input_token_details": {
-                                "cache_read": 0
-                            },
-                            "output_token_details": {}
-                        }
-                    }
-                }
-            ]
-        }
-    }
+    "name": "阿尔伯特·爱因斯坦",
+    "birth_year": 1879,
+    "nationality": [
+        "德国",
+        "瑞士",
+        "美国"
+    ],
+    "major_achievements": [
+        "提出狭义相对论（1905年）",
+        "提出广义相对论（1915年）",
+        "解释光电效应并提出光量子假说（1905年，为此获1921年诺贝尔物理学奖）",
+        "质能等价公式 E=mc² 的提出",
+        "对布朗运动的理论解释，为原子存在提供有力证据",
+        "在统一场论、量子力学基础（如EPR佯谬）等领域作出深远影响"
+    ],
+    "famous_theory": "相对论（包括狭义相对论和广义相对论）"
 }
