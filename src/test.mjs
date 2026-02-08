@@ -7,3 +7,4 @@ export function getGitDiff() {
 const diff = getGitDiff();
 
 console.log(diff);
+console.log("diff");

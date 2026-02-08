@@ -87,3 +87,26 @@ while (response.tool_calls && response.tool_calls.length > 0) {
 }
 console.log("【最终回复】");
 console.log(response.content);
+
+function debounce(fn, delay) {
+  let timer = null;
+
+  return function (...args) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+}
+
+function throttle(fn, delay) {
+  let timer = null;
+
+  return function (...args) {
+    if (timer) return;
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+      timer = null;
+    }, delay);
+  };
+}
