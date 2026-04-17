@@ -33,14 +33,11 @@ try {
 
   console.log("问题:", question);
 
-  const response = await model.invoke(question);
+  const response = await model.stream(question);
 
-  console.log("✅ 收到响应:\n");
-  console.log(response.content); // 解析 JSON
-
-  const result = await parser.parse(response.content);
-  console.log("\n📋 解析后的 JSON 对象:");
-  console.log(result);
+  for await (const chunk of response) {
+    console.log(chunk.content);
+  }
 } catch (error) {
   console.error("❌ 错误:", error.message);
 }

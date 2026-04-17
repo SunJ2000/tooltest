@@ -20,7 +20,6 @@ const model = new ChatOpenAI({
 const readFileTool = tool(
   async (filePath) => {
     const fileContent = await fs.readFile(filePath, "utf8");
-    console.log(`【工具调用】Reading file: ${filePath}`);
     return fileContent;
   },
 
@@ -48,12 +47,16 @@ const messages = [
   new HumanMessage("请读取 ./src/tool-file-read.mjs 文件内容并解释代码"),
 ];
 
-let response = await modelWithTools.invoke(messages);
-// console.log(response);
+while (true) {
+  const response = await modelWithTools.invoke(messages);
+  messages.push(response);
 
-messages.push(response);
+  if (!response.tool_calls || response.tool_calls.length === 0) {
+    console.log("【最终回复】");
+    console.log(response.content);
+    break;
+  }
 
-while (response.tool_calls && response.tool_calls.length > 0) {
   console.log(response.tool_calls.length, "个【工具调用】");
   const toolResults = await Promise.all(
     response.tool_calls.map(async (toolCall) => {
@@ -65,8 +68,7 @@ while (response.tool_calls && response.tool_calls.length > 0) {
         `  [执行工具] ${toolCall.name}(${JSON.stringify(toolCall.args)})`
       );
       try {
-        const toolResponse = await tool.invoke(toolCall.args);
-        return toolResponse;
+        return await tool.invoke(toolCall.args);
       } catch (e) {
         console.log(e);
         return `error: ${e.message}`;
@@ -82,31 +84,4 @@ while (response.tool_calls && response.tool_calls.length > 0) {
       })
     );
   });
-  response = await modelWithTools.invoke(messages);
-  messages.push(response);
-}
-console.log("【最终回复】");
-console.log(response.content);
-
-function debounce(fn, delay) {
-  let timer = null;
-
-  return function (...args) {
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(() => {
-      fn.apply(this, args);
-    }, delay);
-  };
-}
-
-function throttle(fn, delay) {
-  let timer = null;
-
-  return function (...args) {
-    if (timer) return;
-    timer = setTimeout(() => {
-      fn.apply(this, args);
-      timer = null;
-    }, delay);
-  };
 }

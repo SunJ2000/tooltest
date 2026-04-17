@@ -11,11 +11,12 @@ const model = new ChatOpenAI({
     basePath: process.env.OPENAI_BASE_URL,
   },
 });
+
 const mcpClient = new MultiServerMCPClient({
   mcpServers: {
     "my-mcp-server": {
       command: "node",
-      args: ["D:\\Code\\AiAgent\\tooltest\\src\\my-mcp-server.mjs"],
+      args: ["D:\\Code\\AiAgent\\tool_test\\src\\my-mcp-server.mjs"]
     },
   },
 });
